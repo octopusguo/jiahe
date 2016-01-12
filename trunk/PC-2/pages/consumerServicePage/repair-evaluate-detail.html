@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>评价详情</title>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="lib/html5.js"></script>
+		<script type="text/javascript" src="lib/respond.min.js"></script>
+		<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+		<![endif]-->
+		<link href="../../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+		<link href="../../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+		<link href="../../lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/countingStars.css" rel="stylesheet" type="text/css" />
+		<!--[if IE 6]>
+		<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+		<script>DD_belatedPNG.fix('*');</script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="pd-20 container form form-horizontal">
+				<h4>用户信息</h4>
+				<div class="row cl">
+					<label class="form-label col-2">
+						姓名：
+					</label>
+					<div class="formControls col-10">
+						<span id="userName">瑶瑶</span>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-2">
+						电话：
+					</label>
+					<div class="formControls col-10">
+						<span id="userphone">13862369322</span>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-2">
+						所属地区：
+					</label>
+					<div class="formControls col-10">
+						<span id="userfaild">广州</span>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-2">
+						所属项目：
+					</label>
+					<div class="formControls col-10" id="showContent">
+						<span id="userDemo">梅花山</span>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-2">
+						房产：
+					</label>
+					<div class="formControls col-10" id="showContent">
+						<span id="userhouse">3栋401</span>
+					</div>
+				</div>
+				<div class="row cl">
+					<label class="form-label col-2">
+						评价时间：
+					</label>
+					<div class="formControls col-10" id="showContent">
+						<span id="evaluateTime">2015/10/22</span>
+					</div>
+				</div>
+			<hr style="margin-top:15px"/>
+			<div class="row cl">
+					<h4>评价信息</h4>
+					<div class="row cl">
+						<label class="form-label col-2">保修满意度：</label>
+						<div class="formControls col-6">
+							<div class="starsBox" >
+								<ul class="star" id="star">
+									<li><a href="####" title="非常差" class="one-star">1</a></li>
+									<li><a href="####" title="真的是差" class="two-star">2</a></li>
+									<li><a href="####" title="还好啦" class="three-star">3</a></li>
+									<li><a href="####" title="还可以接受" class="four-star">4</a></li>
+									<li><a href="####" title="太满意了" class="five-star">5</a></li>
+								</ul>
+								<div class="current-rating" id="showb"></div>
+								<!-- 用于最终显示用户选择了多少星星的div -->
+							</div>
+						</div>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-2">评论：</label>
+						<label class=" col-10 margin-t3" id="userEvaluate">服务太好了！</label>
+					</div>
+					<div class="row cl">
+						<label class="form-label col-2">备注：</label>
+					    <label class="col-10 margin-t3" id="userElse">服务太好了！</label>
+					</div>
+				
+			</div>
+			<div class="row cl text-c">
+				<button type="button" id="reback" class="btn btn-default radius" onclick="layer_close();">返回</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>  
+		<script type="text/javascript" src="../../lib/layer/1.9.3/layer.js"></script> 
+		<script type="text/javascript" src="../../lib/Validform/5.3.2/Validform.min.js"></script> 
+		<script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script> 
+		<script type="text/javascript" src="../../lib/icheck/jquery.icheck.min.js"></script> 
+		<script type="text/javascript" src="../../lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+		<script type="text/javascript" src="../../js/H-ui.js"></script> 
+		<script type="text/javascript" src="../../js/H-ui.admin.js"></script>
+	</body>
+	<script>
+	
+		$(document).ready(function(){
+			countingStars();
+		});
+		
+		function countingStars(){
+			//获取用户评价星数
+			var n=3;
+			var stepW=24;
+			 $("#showb").css({"width":n*stepW});//值需要用函数计算的，用multiple的css方法
+		}
+	</script>
+</html>

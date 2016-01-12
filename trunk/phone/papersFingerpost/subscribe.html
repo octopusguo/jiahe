@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>领证预约</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="uh bc-text-head ub bc-head" style="height: 2.6rem;">
+                <div class="nav-btn" id="nav-left"></div>
+                <h1 class="ut ub-f1 ub-ac ulev-3 ut-s tx-c" tabindex="0"></h1>
+                <div class="nav-btn font_26 ma-r-1" id="nav-right" onclick="myOrder()">我的预约</div>
+            </div>
+            <!--header结束--><!--content开始-->
+            <div id="content" class="tx-l  bc-bg bg_fff">
+                <div class="subscribe_wrap">
+                    <div class="subscribe_top">
+                        <div class="yell ub"></div>
+                        <div class="ub bor_a dataTime font_24">
+                            <div class="subscribeTimes"><div class="ub ub-con ub-pc ub-ac">日期</div></div>
+                            <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac  bor_L1">时间</div></div>
+                            <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">已预约</div></div>
+                            <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">可预约</div></div>
+                            <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">操作</div></div>
+                        </div>
+                    </div>
+                    <div class="subscribe_con ">
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月12日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_97">预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration" onclick="order()">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月13日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_97">预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月14日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_97">预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月15日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_d63535">已预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月16日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_97">预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月17日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_97">预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ub ub-ac bor_a font_24 ma-b-02">
+                            <div class="subscribeTimes datas"><div class="ub ub-con ub-pc ub-ac">6月18日</div></div>
+                            <div class="ub-f3">
+                                <div class="ub dataTime2 bor_B1">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">09:00-11:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">10</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_97">预约</div></div>
+                                </div>
+                                <div class="ub dataTime2">
+                                    <div class="ub-f2"><div class="ub ub-con ub-pc ub-ac">13:00-16:00</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">0</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1">15</div></div>
+                                    <div class="ub-f1"><div class="ub ub-con ub-pc ub-ac  bor_L1 color_0e84ce txt-decoration">预约</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subscribe_bo">
+                        <div class="ub bor_a rule ub-ac ub-pc">
+                            <img src="../images/eye.jpg"/>
+                            <div class="ma-l-1 color_d63535">预约规则</div>
+                        </div>
+                        <div class="yell2 ub"></div>
+                    </div>
+                </div>
+            </div>
+            <!--content结束-->
+        </div>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script src="../js/index.js"></script>
+    </body>
+    <script>
+        function myOrder(){
+            window.location.href="myOrder.html";
+        }
+        function order(){
+            window.location.href="houseChoice.html";
+        }
+    
+ </script>
+</html>

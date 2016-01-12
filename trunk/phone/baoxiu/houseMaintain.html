@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>房屋保养</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="uh bc-text-head ub bc-head">
+                <div class="nav-btn" id="nav-left"></div>
+                <h1 class="ut ub-f1 ub-ac ulev-3 ut-s tx-c" tabindex="0">房屋保养</h1>
+                <div class="nav-btn" id="nav-right" onclick="seek()"><img src="../images/inquire.png" style="width: 1.3rem" /></div>
+            </div>
+            <!--header结束--><!--content开始-->
+            <div id="content" class="tx-l pa-b-5 bg_f2f2f2">
+                <div class="query1 bg_fff">
+                    <div class="ub">
+                        <div class="sc-bg-active uinput ub ub-f1  bc-border uba pa-l1 font_26 uc-a1">
+                            <input placeholder="请输入关键字" type="text" class="ub-f1">
+                        </div>
+                        <div class="btn ub ub-ac bc-text-head ub-pc seek bg_3299e4 uc-a1"  id="btn">搜索</div>
+                    </div>
+                </div>
+                <div id="">
+                    <div class="color_0e84ce font_26 pa-l1 pa-tb-05">2015-11-12</div>
+                    <div class="bg_fff">
+                        <div class="homeList bg_fff ub ub-ac ub-pj bor_B bor_T">
+                            <div class="ub ub-ac">
+                                <div class="">小知识推送</div>
+                            </div>
+                            <div id="btn1" class="ub ub-ac ub-pc" onclick="particulars()">
+                                <div id="down" class="down1"></div>
+                            </div>
+                            <!-- <div id="btn2" class="ub ub-ac ub-pc uhide" onclick="particulars(1)">
+                                <div class="down"></div>
+                            </div> -->
+                        </div>
+                        <div class="pa-all bor_B" id="messages"> 
+                            <div class="ma-t-1 txt-indent pa-lr-05 font_26">佳兆业·丽晶公馆是佳兆业集团在成都布局的第六个精品项目，项目位于成都市温江光华新城核心区，江安河畔，坐拥一线河岸景观资源，周围配套成熟，伊藤洋华堂、珠江国际购物中心、新光三越百货、家乐福、永辉超市等近在咫尺，地铁四号线光华公园站距项目约1000米，属于真正的地铁物业。不仅如此，项目的优质教育资源更是一大亮点，温江新城光华实验学校、温江中学与项目一街之隔，成都实验外国语学校距项目约1000米的距离，是真正的学区住宅。</div>
+                            <div class="ma-t-1 txt-indent pa-lr-05 font_26">项目占地约87亩，建筑面积24万余平米，整个项目采用开放式交错布局，保证了每栋楼均有良好的采光，作为佳兆业·丽晶港的升级之作，佳兆业·丽晶公馆将秉承佳兆业·丽晶港在温江的良好口碑，以高品质树立标杆、以精服务树立形象，为温江人民再造一个封面之作。</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--content结束-->
+        </div>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script src="../js/index.js"></script>
+    </body>
+    <script>
+       function seek(){
+            $(".query1").toggle();
+       }
+       function particulars(){
+           $("#messages").toggle();
+           $("#down").toggleClass('down')
+       }
+        
+ </script>
+</html>

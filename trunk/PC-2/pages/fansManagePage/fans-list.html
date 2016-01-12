@@ -1,0 +1,117 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,member-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link href="../../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="../../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="../../css/style.css" rel="stylesheet" type="text/css"  />
+<link href="../../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>粉丝信息</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 后台管理系统<span class="c-gray en">&gt;</span> 粉丝管理 <span class="c-gray en">&gt;</span> 粉丝信息 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20">
+	<div class="text-c"> 
+		所在区域：
+		<span class="select-box" style="width: 250px;">
+		  <select class="select" size="1" name="demo1">
+		    <option value="" selected>默认select</option>
+		    <option value="1">菜单一</option>
+		    <option value="2">菜单二</option>
+		    <option value="3">菜单三</option>
+		  </select>
+		</span>
+		日期范围：
+		<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
+		-
+		<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
+		<input type="text" class="input-text" style="width:250px" placeholder="输入昵称、姓名、手机号、身份证号等" id="" name="">
+		<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+	</div>
+	<div class="clearfix mt-20"><button class="btn btn-primary r mb-10">Excel导出</button></div>
+	<div class="cl pd-5 bg-1 bk-gray mt-10"><span class="r">共有数据：<strong>88</strong> 条</span> </div>
+	<div>
+		<table class="table table-border table-bordered table-hover table-bg table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="25"><input type="checkbox" name="" value=""></th>
+					<th width="80">ID</th>
+					<th width="80">昵称</th>
+					<th width="80">姓名</th>
+					<th width="40">性别</th>
+					<th width="90">手机号</th>
+					<th width="100">身份证号</th>
+					<th width="100">地区</th>
+					<th width="80">角色</th>
+					<th width="130">注册日期</th>
+					<th width="100">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="text-c">
+					<td><input type="checkbox" value="1" name=""></td>
+					<td>1</td>
+					<td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','360','400')">张三</u></td>
+					<td>zhangsan</td>
+					<td>男</td>
+					<td>13000000000</td>
+					<td>441823199609165529</td>
+					<td class="text-l">北京市 海淀区</td>
+					<td>系统管理员</td>
+					<td>2014-6-11 11:11:42</td>
+					<td class="td-manage"><a style="text-decoration:none" href="fans-info.html" title="查看">查看</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="" style="margin-top:40px;text-align: center;" id="page">
+			一共<span id="total">22</span>条数据<span id="pageNav" class="umar_l15"></span>
+	</div>
+</div>
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="../../lib/layer/1.9.3/layer.js"></script>
+<script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="../../lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="../../lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="../../js/H-ui.js"></script> 
+<script type="text/javascript" src="../../js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="../../js/page.js"></script>
+<script type="text/javascript">
+
+	$('.table-sort').dataTable({
+			"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+			"bStateSave": true,//状态保存
+			"aoColumnDefs": [
+			  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+			  {"orderable":false,"aTargets":[0,4]}// 制定列不参与排序
+			]
+		});
+		//分页处理
+		window.onload = function(){
+			
+			pageNav.go(1,10);
+			//pageNav.go(当前页码，总页数=总条数/每页显示多少条目)
+		}
+		pageNav.go = function(p, pn) {
+			//p为当前页，pn为总页数
+		  document.getElementById("pageNav").innerHTML = this.nav(p, pn);
+		  if (this.fn != null) {
+		    this.fn(this.p, this.pn);
+		  };
+		};
+</script> 
+</body>
+</html>

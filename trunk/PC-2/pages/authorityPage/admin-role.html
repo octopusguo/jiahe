@@ -1,0 +1,139 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link href="../../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="../../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>角色管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>后台管理系统<span class="c-gray en">&gt;</span> 权限管理 <span class="c-gray en">&gt;</span> 角色管理 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20">
+	<div class="text-c" style="margin-bottom: 20px;">
+		<input type="text" name="" id="" placeholder="角色名" style="width:250px" class="input-text">
+		<div class="radio-box">
+			<input type="radio" id="radio-2" name="demo-radio1">
+			<label for="radio-2">启用</label>
+		</div>
+		<div class="radio-box">
+			<input type="radio" id="radio-2" name="demo-radio1">
+			<label for="radio-2">禁用</label>
+		</div>
+		<button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i>查询</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray"> <span class="l"> <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" href="javascript:;" onclick="layer_show('添加角色','admin-role-add.html','1')"><i class="Hui-iconfont">&#xe600;</i> 添加角色</a> </span> </div>
+	<table class="table table-border table-bordered table-hover table-bg table-sort">
+		<thead>
+			<tr>
+				<th scope="col" colspan="8">角色管理</th>
+			</tr>
+			<tr class="text-c">
+				<th width="25"><input type="checkbox" value="" name=""></th>
+				<th width="40">ID</th>
+				<th width="150">角色名</th>
+				<th width="100">状态</th>
+				<th>角色说明</th>
+				<th width="100">创建人</th>
+				<th width="70">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--<tr class="text-c">
+				<td><input type="checkbox" value="" name=""></td>
+				<td>2</td>
+				<td>超级管理员</td>
+				<td>启用</td>
+				<td>拥有至高无上的权利</td>
+				<td>Admin</td>
+				<td class="f-14"><a title="编辑" href="javascript:;" onclick="admin_role_edit('角色编辑','admin-role-add.html','1')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+			</tr>-->
+		</tbody>
+	</table>
+	<div class="" style="margin-top:40px;text-align: center;" id="page">
+			共<span id="total">22</span>条数据&nbsp;<span id="pageNav" class="umar_l15"></span>&nbsp;共<span id="tPage"></span>页
+	</div>
+</div>
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="../../lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="../../lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="../../js/H-ui.js"></script> 
+<script type="text/javascript" src="../../js/H-ui.admin.js"></script> 
+<script  type="text/javascript" src="../../js/page.js"></script>
+<script type="text/javascript" src="../../js/selfscript.js"  ></script>
+<script type="text/javascript">
+/*分页*/
+var cPage=1,pData=10,tData,tPage;//当前页码，每页显示条目数，总条数
+var url_getList=URLHEAD+"rolesType";//获取角色地址头部定义
+   getRoleList();
+	function getRoleList(){
+		$.ajax({
+			type:"get",
+			url:url_getList+"?type=2",
+			async:true,
+			dataType:'json',
+			success:function(data){
+				tData=data.data.length;
+				insertIntoTable(data.data);
+				$("#total").html(tData);
+				tPage=Math.ceil(2/pData);
+				pageNav.go(cPage,tPage);//分页(当前页，总页数)
+				$("#tPage").html(tPage);//共页数
+			},
+			error:function(err){
+				alert(JSON.stringify(err));
+			}
+		});
+	}
+	pageNav.go = function(p, pn) {
+			//p为当前页，pn为总页数
+		  document.getElementById("pageNav").innerHTML = this.nav(p, pn);
+		  if (this.fn != null) {
+		    this.fn(this.p, this.pn);
+		  };
+	}
+	
+	function insertIntoTable(DATALIST){
+		console.log(JSON.stringify(DATALIST));
+		var iHtml="";
+		for(var i=0;i<DATALIST.length;i++){
+				iHtml+='<tr class="text-c">'
+				+'<td><input type="checkbox" value="" name=""></td>'
+				+'<td>'+DATALIST[i].rolesId+'</td>'//ID
+				+'<td>'+DATALIST[i].rolesName+'</td>'//角色名
+				+'<td>'+DATALIST[i].rolesStatus+'</td>'//状态
+				+'<td>'+DATALIST[i].rolesMsg+'</td>'//角色说明
+				+'<td>'+DATALIST[i].createAcount+'</td>'//创建人
+				+'<td class="f-14"><a title="编辑" href="javascript:;" onclick="layer_show(\'角色编辑\',\'admin-role-add.html\','+i+');setCookie(\'RoleId\',\''+DATALIST[i].rolesId+'\',\'1\');" ><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'+i+')" class="ml-5" ><i class="Hui-iconfont">&#xe6e2;</i></a></td></tr>'
+				//操作
+		}
+	    $("table>tbody").prepend(iHtml);
+	}
+	
+	/*管理员-角色-删除*/
+	function admin_role_del(obj,id){
+		layer.confirm('角色删除须谨慎，确认要删除吗？',function(index){
+			//此处请求后台程序，下方是成功后的前台处理……
+			
+			
+			$(obj).parents("tr").remove();
+			layer.msg('已删除!',{icon:1,time:1000});
+		});
+	}
+</script>
+</body>
+</html>

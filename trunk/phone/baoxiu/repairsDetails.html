@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>房屋报修</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <div id="content" class="tx-l pa-b-5 bg_f2f2f2 ma-b-05">
+                <div class="bg_fff ub-f1 pa-l1 ub ub-pj ma-b-05">
+                    <div class="pa-tb-1">
+                        <div class="color_4098e2">报修单</div>
+                        <div class="pa-l1 font_26 color_97">2015年05月24日  12:32</div>
+                        <div class="pa-l1 font_26">房间漏水，速来处理</div>
+                    </div>
+                </div>
+                <div class="bg_fff ma-b-02 pa-lr-1 pa-tb-1">
+                    <div class="font_36 ub ub-f1 bor_B pa-b-05">保修期限公告</div>
+                    <div class="ma-t-1 txt-indent pa-lr-05 font_26">佳兆业·丽晶公馆是佳兆业集团在成都布局的第六个精品项目，项目位于成都市温江光华新城核心区，江安河畔，坐拥一线河岸景观资源，周围配套成熟，伊藤洋华堂、珠江国际购物中心、新光三越百货、家乐福、永辉超市等近在咫尺，地铁四号线光华公园站距项目约1000米，属于真正的地铁物业。不仅如此，项目的优质教育资源更是一大亮点，温江新城光华实验学校、温江中学与项目一街之隔，成都实验外国语学校距项目约1000米的距离，是真正的学区住宅。</div>
+                </div>
+                <div class="bg_fff pa-tb-1 pa-l1">维修进展</div>
+                <div class="ub-f1 bg5">
+                    <img src="../images/bg5.jpg"/>
+                </div>
+                <div class="bg_fff ma-t-05 ma-lr-05 pa-t-05">
+                    <div class="ub ub-f1 ub-ac ma-l-1">
+                        <div class="ub ub-f1 ub-pc">
+                            <div class=" rtimeline"></div>
+                            <div class="rpoint mar_l ma-t-05 bg_3299e4"></div>
+                            <div class="ma-l-1 ma-b bor_B ub-f1">
+                                 <div id="name" class="font_26" style="position:relative;">A已经接受，马上出发修理,预计修理时间周期为半天</div>
+                                 <div id="" class="pa-b-05 font_26 color_97">2015-12-20  23:11</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ub ub-f1 ub-ac ma-l-1">
+                        <div class="ub ub-f1 ub-pc">
+                            <div class=" rtimeline"></div>
+                            <div class="rpoint r_bc1 mar_l ma-t-05"></div>
+                            <div class="ma-l-1 ma-b bor_B ub-f1">
+                                 <div id="name" class="font_26 color_97" style="position:relative;">B已经接受，马上出发修理,预计修理时间周期为半天</div>
+                                 <div id="" class="pa-b-05 font_26 color_97">2015-12-20  23:11</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ub ub-f1 ub-ac ma-l-1">
+                        <div class="ub ub-f1 ub-pc">
+                            <div class=" rtimeline"></div>
+                            <div class="rpoint r_bc1 mar_l ma-t-05"></div>
+                            <div class="ma-l-1 ma-b bor_B ub-f1">
+                                 <div id="name" class="font_26 color_97" style="position:relative;">B已经接受，马上出发修理,预计修理时间周期为半天</div>
+                                 <div id="" class="pa-b-05 font_26 color_97">2015-12-20  23:11</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ub ub-f1 ub-ac ma-l-1">
+                        <div class="ub ub-f1 ub-pc">
+                            <div class="rpoint mar_l ma-t-05 r_bc1"></div>
+                            <div class="ma-l-1 ma-b bor_B ub-f1">
+                                 <div id="name" class="font_26 color_97" style="position:relative;">B已经接受，马上出发修理,预计修理时间周期为半天</div>
+                                 <div id="" class="pa-b-05 font_26 color_97">2015-12-20  23:11</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- 评论按钮如果订单未完成就隐藏，订单完成就显示 -->
+            <div class="pa-lr-1 pa-tb-05">
+                <div class="btn ub ub-ac bc-text-head ub-pc bg_3299e4 uc-a1 ma-b-05"  id="btn" onclick="comment()">评论</div>
+            </div>
+            <!-- <div class="ub bg_3299e4 pa-tb-05 color_fff ub-pc ub-ac ma-lr-1 uc-a1" onclick="comment()">评论</div> -->
+            <!--content结束-->
+        </div>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script src="../js/index.js"></script>
+    </body>
+    <script>
+       function comment(){
+           window.location.href="houseComment.html";
+       } 
+ </script>
+</html>

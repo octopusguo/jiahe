@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>佳兆业管理员后台系统-testing</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<!--ace style start-->
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+		<!--ace style end-->
+		<link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
+		<script src="assets/js/ace/ace-extra.min.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--header start-->
+			<div class="navbar navbar-default navbar-fixed-top midnight hidden-xs" data-midnight="white" role="navigation" >
+				<div class="container">
+					<div class="navbar-header pull-left">
+						<a class="navbar-brand" href="#">
+							<!--	<span class="index-logo"></span>-->
+							<img src="assets/img/index-logo.png" style="width:300px;height:auto;" />
+						</a>
+					</div>
+					<div class="collapse nav-header-collapse navbar-collapse pull-right " role="navigation">
+						<ul class="nav navbar-nav navbar-right">
+							<li><button type="button"   id="toLogin"  class="btn btn-default btn-xs btn-header-mar btn-radius" >登录</button></li>
+						</ul>		
+					</div>
+					
+				</div><!--/.container-->
+			</div>
+			<!--top header-->
+			<!--left navlist-->
+			<div class="main-container nav-mar-tb" id="main-container" >
+				<div class="main-container-inner">
+					<div class="sidebar" id="">
+			            <ul class="nav nav-list" id="menu"></ul>
+			            <!--<div class="sidebar-collapse" id="sidebar-collapse">
+			                <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+			            </div>-->
+			        </div>
+				</div> <!--/.main-container-inner-->
+			</div>	
+			
+			<!--tablist-->
+			<div class="main-content">
+				<div class="page-content">
+                    <div class="row">
+                        <div class="col-xs-12" style="padding-left:3px;">
+                            <ul class="nav nav-tabs" role="tablist" style="border-bottom: 2px solid #ddd;">
+                                <!--<li class="active"><a href="#Index" role="tab" data-toggle="tab">首页</a></li>-->
+                            </ul>
+                            <div class="tab-content" style="border:0;">
+                            	<!--tab内容-->
+                                <div role="tabpanel" class="tab-pane active" id="Index">
+                                	<!--<div class="bg-indexPage"></div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.tablist main-content-->
+		<!--header end-->
+		
+		
+		
+		
+		<!--content start-->
+		 <!--<div class="main-container">
+		 	<h1>佳兆业管理后台系统</h1>
+		 </div>-->
+			
+		
+		<!--content 结束-->
+		
+		
+		
+		
+		<!--js文件导入-->
+		<script src="assets/js/bootstraps/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="assets/js/bootstraps/bootstrap.min.js" type="text/javascript"></script>
+		<script src="assets/js/ace/ace.min.js" type="text/javascript"></script>
+		<script src="assets/js/sidebar-menu.js" type="text/javascript"></script>
+		<script src="assets/js/index.js" type="text/javascript"></script>
+	</body>
+	<script>
+//	  alert(document.getElementById("Index").offsetHeight);
+	  $("#toLogin").click(function(){
+	  	window.location.href="pages/logePage.html";
+	  })
+	</script>
+</html>

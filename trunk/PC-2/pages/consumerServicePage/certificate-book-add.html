@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>添加领证预约</title>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="lib/html5.js"></script>
+		<script type="text/javascript" src="lib/respond.min.js"></script>
+		<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+		<![endif]-->
+		<link href="../../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+		<link href="../../skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
+		<link href="../../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+		<link href="../../lib/icheck/icheck.css" rel="stylesheet" type="text/css" />
+		<link href="../../lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+		<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+		<!--[if IE 6]>
+		<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+		<script>DD_belatedPNG.fix('*');</script>
+		<![endif]-->
+	</head>
+	<body>
+	<div class="pd-20">
+		<div class="form form-horizontal" id="form-action-add">
+			<div class="row cl">
+					<label class="form-label col-2"><span class="c-red">*</span>所属公司：</label>
+					<div class="formControls col-2">
+						<div class="formControls col-10"> 
+						<span class="select-box">
+							<select name="" class="select">
+								<option value="0">请选择</option>
+								<option value="1">1</option>
+							</select>
+						</span> 
+						</div>
+					</div>
+					<label class="form-label col-2"><span class="c-red">*</span>所属项目：</label>
+					<div class="formControls col-2">
+						<div class="formControls col-10"> <span class="select-box">
+						<select name="" class="select">
+							<option value="0">请选择</option>
+							<option value="1">1</option>
+						</select>
+						</span> 
+						</div>
+					</div>	
+			<!---->
+			</div>
+			<hr style="margin:15px 15px 0 15px;"/>
+			<div class="row cl" id="forBooking" >
+				<div class="row cl">
+					<label class="form-label col-2"><span class="c-red">*</span>报名日期：</label>
+					<div class="formControls col-2">
+						<input id="bookDate" class="input-text Wdate" highLineWeekDay="true" type="text" onfocus="WdatePicker({minDate: '%y-%M-%d' })" name="mustInput" value=""/>
+					</div>
+				</div>
+				<div class="row cl" id="bookingTime">
+					<div class="col-6" >
+						<label class="form-label col-4"><span class="c-red">*</span>报名时间：</label>
+						<div class="formControls col-8" >
+							<input id="startTime" class="input-text Wdate input-wh100" type="text" onfocus="WdatePicker({dateFmt:'H:mm',minDate:'00:00',maxDate:'24:00'})" name="mustInput" value=""/> - <input id="finalTime" class="input-text Wdate input-wh100" type="text" onfocus="WdatePicker({dateFmt:'H:mm',minDate:'00:00',maxDate:'24:00'})" name="mustInput" value=""/>
+							<label>限制人数：<input type="text" id="personCount" class="input-text " value="" style="width:50px;" name="mustInput"/> 人</label>
+						</div>
+					</div>
+					<button id="addTimes"  class="btn btn-primary">+</button>
+				</div>
+				<div class="row cl" >
+					<!--添加的时间段-->
+					<!--<div class="input-group col-8">
+						 <input type="text" class="input-text form-control text-c disabled " value="报名时间：8：00：00 - 2016-1-3 ，限制人数：5人">
+					</div>
+					<button class="btn btn-primary" style=""> - </button>-->
+				</div>
+				<div class="row cl">
+					<label class="form-label col-2">截止时间：</label>
+					<div class="formControls col-2">
+						<input id="lastTime" class="input-text Wdate" type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'%y-%M-%d %H-%m-%s'})" value=""/>
+						<!--截至报名时间为当前时间之后-->
+					</div>
+				</div>	
+				<div class="cl text-c"><button class="btn btn-primary radius" id="addBooks">添加预约</button></div>
+				<hr style="margin:15px;"/>
+			</div>
+			
+			<div class="row cl">
+				<!--添加的预约时间-->
+				<!--<div class="input-group col-8">
+					 <input type="text" class="input-text form-control text-c disabled" value="报名日期：2016-1-20 ，报名时间：8：00：00 - 2016-1-3 ，限制人数：5人 ，截至时间：2016-1-20 24：00">
+				</div>
+				<button class="btn btn-primary" style=""> - </button>-->
+				
+				<!--<label class="form-label col-8 text-c" style="background-color:#e6e6e6;border-color:#ddd;padding:5px;">
+					<b>报名日期：</b>2016-1-20 &nbsp;
+					<b>报名时间：</b>8：00-24：00 <b>限制人数：</b>5人 &nbsp;
+					<b>截至时间：</b>2016-1-20 24：00
+				</label>-->
+			</div>
+			<div class="row cl"> 
+				<label class="form-label col-2">领证地址：</label>
+				<div class="col-6">
+					<input class="input-text" type="text" id="booksAddress" />
+				</div>
+			</div>
+			<div class="row cl"> 
+				<label class="form-label col-2">咨询热线：</label>
+				<div class="col-6">
+					<input class="input-text" type="text" id="booksPhone" />
+				</div>
+			</div>
+			<div class="row cl text-c">
+				<button type="button" class="btn btn-success radius" id="submit">发布</button>
+				<button type="button" class="btn btn-default radius margin-l5" onclick="layer_close();">取消</button>
+			</div>
+		</div>
+	</div>
+		<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>  
+		<script type="text/javascript" src="../../lib/layer/1.9.3/layer.js"></script> 
+		<script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script> 
+		<script type="text/javascript" src="../../lib/icheck/jquery.icheck.min.js"></script> 
+		<script type="text/javascript" src="../../lib/My97DatePicker/WdatePicker.js"></script> 
+		<script type="text/javascript" src="../../lib/Validform/5.3.2/Validform.min.js"></script>
+		<script type="text/javascript" src="../../lib/ueditor/1.4.3/ueditor.config.js"></script> 
+		<script type="text/javascript" src="../../lib/ueditor/1.4.3/ueditor.all.min.js"> </script> 
+		<script type="text/javascript" src="../../lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script> 
+		<script type="text/javascript" src="../../js/H-ui.js"></script> 
+		<script type="text/javascript" src="../../js/H-ui.admin.js"></script> 
+	</body>
+	<script>
+		/*判断数字:var IreReg=!!val.match(/^[0-9]+.?[0-9]*$/);*/
+		/*各时间变量:*/
+		var bDate ,st,et,ltime,cp;//报名日期,开始报名时间,结束报名时间,截至时间,人数
+		/*添加局部报名时间和整体预约*/
+		
+		
+		 
+		/*添加报名时间*/
+		$("#addTimes").click(function(){
+			 st=$("#startTime").val();et=$("#finalTime").val();cp=$("#personCount").val();//开始报名时间//结束报名时间//人数
+			var isNum=!!cp.match(/^[0-9]*$/);
+			if(st!=""&&et!=""&&cp!=""){
+				if(isNum==false){
+					alert("限制人数请输入正确数字!");
+					$("#personCount").addClass('Validform_error');
+				}else{
+					$("#personCount,#finalTime,#startTime").removeClass('Validform_error');
+					var iValue="报名时间："+st+" - "+et+"，限制人数："+cp+"人";
+					var iHtml='<div class="row cl" >'
+							+'<div class="input-group col-8">'
+							+'<input type="text" class="input-text form-control text-c disabled" value="'+iValue+'"></div>'
+							+'<button class="btn btn-primary" style="" onclick="deleteTimes()"> - </button>'
+							+'</div>'
+					$("#bookingTime").after(iHtml);
+				}
+				
+			}else{
+				alert("请输入完整的报名时间和限制人数！");
+				$("#personCount,#finalTime,#startTime").addClass('Validform_error');
+			}
+			
+		})
+	
+		/*添加预约*/
+		$("#addBooks").click(function(){
+			addBooks();
+		})
+		function addBooks(){
+			bDate=$("#bookDate").val(),ltime=$("#lastTime").val();//报名日期//截至时间;
+			st=$("#startTime").val();et=$("#finalTime").val();cp=$("#personCount").val();//开始报名时间//结束报名时间//人数
+			var oMust=document.getElementsByName('mustInput'),flag=0;
+			for(var i=0;i<oMust.length;i++){
+				if(oMust[i].value!=""){
+					flag++;
+				}else {
+					alert("请确认必填项已填完整！");
+					$("input[name='mustInput']").addClass("Validform_error");
+					return;
+				}
+			}
+			if(flag==oMust.length){
+				var iValue='报名日期：'+bDate+"，报名时间："+st+" - "+et+"，限制人数："+cp+" 人，截至时间："+ltime;
+				var iHtml='<div class="input-group col-8">'
+						+'<input type="text" class="input-text form-control text-c disabled" value="'+iValue+'"></div>'
+						+'<button class="btn btn-primary" onclick=""> - </button>'
+				$("#forBooking").after(iHtml);
+			}
+		}
+		
+			
+		/*删除新的报名时间*/
+		function deleteTimes(){
+			
+		}
+		
+	</script>
+</html>

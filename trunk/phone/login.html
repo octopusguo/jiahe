@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>登录</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <div id="content" class="ub-f1 tx-l ">
+                <div class="loginData bg_fff">
+                    <div class="sc-bg-active uinput ub ub-f1  bc-border uba uc-a1" style="margin-bottom: .5rem;">
+                        <input placeholder="手机号/用户名" type="text" class="ub-f1" id="user">
+                    </div>
+                    <div class="sc-bg-active uinput ub ub-f1  bc-border uba uc-a1" style="margin-bottom: .5rem;">
+                        <input placeholder="密码" type="password" class="ub-f1" id="pass">
+                    </div>
+                    <div class="ub ub-ac">
+                        <div class="sc-bg-active uinput ub ub-f1  bc-border uba uc-a1">
+                            <input placeholder="验证码" type="text" id="auth" class="ub-f1">
+                        </div>
+                        <div class="auth ub ub-ac ub-pc">4XBB8</div>
+                        <div class="font_28">
+                            <div class="">
+                                看不清？
+                            </div>
+                            <div class="" style="text-decoration: underline;color: #1d84d3;">
+                                换一张
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ub" style="padding: 0 .5rem;">
+                    <div class="btn ub ub-f1 uc-a1 ub-ac bc-text-head ub-pc bg_3299e4"  id="btn">登录</div>
+                </div>
+                <div class="ub ub-ac ub-pj" style="padding: 0 .5rem;margin-top: 1rem;">
+                    <div class="color_226fa3 font_26" onclick="forgetPass()">忘记密码</div>
+                    <div class="color_226fa3 font_26" onclick="register()">立刻注册</div>
+                </div>
+            </div>
+
+        </div>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+    <script>
+        function register(){
+            window.location.href="register.html";
+        }
+        function forgetPass(){
+            window.location.href="forgetPassword.html"
+        }
+
+    
+    
+    
+ </script>
+</html>

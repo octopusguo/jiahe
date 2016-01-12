@@ -1,0 +1,124 @@
+@charset "utf-8";
+a,a:hover,a:active{text-decoration: none;}
+.display-none{
+	display:none;
+}
+.text-center{
+	text-align: center;
+}
+/*logo*/
+.img_wh{
+	width:150px;
+	height:100px;
+}
+.input-wh100{
+	width:100px;
+}
+/*首页背景*/
+.bg-indexPage{
+	background:url(../images/bg_indexpage.png) no-repeat;
+	position: fixed;
+    _position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center auto;
+     background-size: contain;
+    -webkit-background-size: contain;
+}
+/*登录页*/
+.img-bg{
+	position: fixed;
+    _position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    z-index: -10;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    zoom: 1;
+}
+.login-box{
+	background-color:#fff;
+	box-shadow: 0 0 10px #eee;
+	/*border:2px solid #ddd;*/
+	border-radius:.5rem;
+	-webkit-border-radius:.5rem;-moz-border-radius:.5rem;-ms-border-radius:.5rem;
+	padding:1rem 2rem 1.5rem 2rem;
+	width:450px;
+	height:300px;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left:0; bottom: 0; right: 0;
+}
+.logo-login{
+	background: url(../images/logo-login.png) no-repeat;
+	-webkit-background-size:contain;
+	background-size:contain;
+}
+.input-login{
+	background-color:#fff;
+	border:2px solid #d9d9d9;
+	border-radius:1rem;
+	-webkit-border-radius:1rem;
+	-moz-border-radius:1rem;
+	-ms-border-radius:1rem;
+	height:2.2rem;
+	width:auto;
+	margin:1rem 3.4rem 0 3.4rem; 
+	line-height: 1rem;
+}
+.btn-login{
+	border-radius:1rem;
+	-webkit-border-radius:1rem;
+	-moz-border-radius:1rem;
+	-ms-border-radius:1rem;
+	background-color:#e38e49;
+	color:#fff;
+	height:2.2rem;
+	width:38%;
+	border:0;
+}
+
+
+
+/*padding & margin*/
+.margin-l5{
+	margin-left:5px;
+}
+.margin-t5{
+	margin-top:5px;
+}
+.margin-t3{
+	margin-top:3px;
+}
+
+/* custom css style: pageNum,cPageNum */
+.pageNum {
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    display: inline-block;
+    background-color:#5a98de;
+    color:#fff;
+}
+
+.cPageNum {
+	border:1px solid #ddd;
+    font-weight: bold;
+    padding: 4px 6px;
+}
+#pageNav{
+	text-align:center;
+    -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+#pageNav a:hover {
+    text-decoration: none;
+    background: #fff4d8;
+}

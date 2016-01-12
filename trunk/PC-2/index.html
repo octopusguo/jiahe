@@ -1,0 +1,216 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link href="css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="skin/default/skin.css" rel="stylesheet" type="text/css" id="skin" />
+<link href="lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>佳兆业微信管理员后台系统</title>
+<meta name="keywords" content="佳兆业微信管理员后台系统">
+<meta name="description" content="佳兆业微信管理员后台系统">
+</head>
+<body>
+<header class="Hui-header cl"> 
+	<div class="Hui-logo l" title="佳兆业微信管理员后台系统">
+		<img src="images/index-logo.png" style="width:300px;height:auto;padding:3px;" />
+	</div> 
+	<!--<nav class="mainnav cl" id="Hui-nav">
+		<ul>
+			<li class="dropDown dropDown_click"><a href="javascript:;" class="dropDown_A"><i class="Hui-iconfont">&#xe600;</i> 新增 <i class="Hui-iconfont">&#xe6d5;</i></a>
+				<ul class="dropDown-menu radius box-shadow">
+					<li><a href="javascript:;" onclick="article_add('添加资讯','article-add.html')"><i class="Hui-iconfont">&#xe616;</i> 资讯</a></li>
+					<li><a href="javascript:;" onclick="picture_add('添加资讯','picture-add.html')"><i class="Hui-iconfont">&#xe613;</i> 图片</a></li>
+					<li><a href="javascript:;" onclick="product_add('添加资讯','product-add.html')"><i class="Hui-iconfont">&#xe620;</i> 产品</a></li>
+					<li><a href="javascript:;" onclick="member_add('添加用户','member-add.html','','510')"><i class="Hui-iconfont">&#xe60d;</i> 用户</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>-->
+	<ul class="Hui-userbar" id="header-ul">
+		<li id="login-box" class="display-none"><a href="login.html" >登录</a></li>
+		<li id="showUserName">超级管理员</li>
+		<li class="dropDown dropDown_hover"><a href="#" class="dropDown_A" id="acountName">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+			<ul class="dropDown-menu radius box-shadow">
+				<li><a href="#" id="changeAcount">切换账户</a></li>
+				<li><a href="#" id="quitLogin">退出</a></li>
+			</ul>
+		</li>
+		<li id="Hui-skin" class="dropDown right dropDown_hover"><a href="javascript:;" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
+			<ul class="dropDown-menu radius box-shadow">
+				<li><a href="javascript:;" data-val="default" title="默认（蓝色）">默认（蓝色）</a></li>
+				<li><a href="javascript:;" data-val="green" title="绿色">绿色</a></li>
+				<li><a href="javascript:;" data-val="red" title="红色">红色</a></li>
+				<li><a href="javascript:;" data-val="yellow" title="黄色">黄色</a></li>
+				<li><a href="javascript:;" data-val="orange" title="绿色">橙色</a></li>
+			</ul>
+		</li>
+	</ul>
+	<a aria-hidden="false" class="Hui-nav-toggle" href="#"></a> </header>
+<aside class="Hui-aside">
+	<input runat="server" id="divScrollValue" type="hidden" value="" />
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-authority">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 权限管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="pages/authorityPage/admin-list.html" href="javascript:void(0)">账号管理</a></li>
+					<li><a _href="pages/authorityPage/admin-role.html" href="javascript:void(0)">角色管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-company">
+			<dt><i class="Hui-iconfont">&#xe613;</i><a _href="pages/companyManagePage/companyMain.html" href="javascript:void(0)"> 公司维护</a></dt>
+		</dl>
+		<dl id="menu-fans">
+			<dt><i class="Hui-iconfont">&#xe616;</i> 粉丝管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="pages/fansManagePage/fans-list.html" href="javascript:void(0)">粉丝用户</a></li>
+					<li><a _href="pages/fansManagePage/fans-group.html" href="javascript:void(0)">粉丝组</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-recommend">
+			<dt><i class="Hui-iconfont">&#xe6ab;</i> 我要推荐<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="pages/sharePage/project-manage.html" href="javascript:void(0)">项目管理</a></li>
+					<li><a _href="pages/sharePage/project-info.html" href="javascript:void(0)">项目发布</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-order">
+			<dt><i class="Hui-iconfont">&#xe63a;</i> 客户服务<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="pages/consumerServicePage/demoProgress.html" href="javascript:void(0)">项目进展</a></li>
+					<li><a _href="pages/consumerServicePage/joiningGuide.html" href="javascript:void(0)">入伙指引</a></li>
+					<li >
+						<a  href="javascript:void(0)" > 办证指南   <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></a>
+						<ul class="submenu" style="display:none;">
+							<li><a _href="pages/consumerServicePage/certificate-notice.html" href="javascript:void(0)">办证公告</a></li>
+							<li><a _href="pages/consumerServicePage/certificateGuide.html" href="javascript:void(0)">办证指引</a></li>
+							<li><a _href="pages/consumerServicePage/certificate-phone.html" href="javascript:void(0)">办证查询电话维护</a></li>
+							<li><a _href="pages/consumerServicePage/certificate-book.html" href="javascript:void(0)">办证预约</a></li>
+						</ul>
+					</li>
+					<li>
+						<a  href="javascript:void(0)" > 保修保养   <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></a>
+						<ul class="submenu " style="display:none;">
+							<li><a _href="pages/consumerServicePage/repair-times.html" href="javascript:void(0)">保修期限</a></li>
+							<li><a _href="pages/consumerServicePage/repair-evaluate.html" href="javascript:void(0)">保修评价</a></li>
+							<li><a _href="pages/consumerServicePage/repair-house.html" href="javascript:void(0)">房屋保养</a></li>
+							<li><a _href="pages/consumerServicePage/repair-expiration.html" href="javascript:void(0)">保修期满通知</a></li>
+						</ul>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-page">
+			<dt><i class="Hui-iconfont">&#xe626;</i> 客户中心<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="pages/consumerManagePage/consumerActivtion.html" href="javascript:void(0)">客户活动</a></li>
+					<li><a _href="pages/consumerManagePage/action-bgImg.html" href="javascript:void(0)">活动报名背景图</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-recommend">
+			<dt><i class="Hui-iconfont">&#xe613;</i><a _href="pages/changePassPage/change-password.html" href="javascript:void(0)"> 修改密码</a></dt>
+		</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 统计分析<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="charts-1.html" href="javascript:void(0)">粉丝关注量</a></li>
+					<li><a _href="charts-2.html" href="javascript:void(0)">会员注册量</a></li>
+					<li><a _href="charts-3.html" href="javascript:void(0)">业主注册量</a></li>
+					<li>
+						<a _href="charts-4.html" href="javascript:void(0)">模块访问量    <i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></a>
+						<ul class="submenu" style="display:none;">
+							<li><a _href="recharge-list.html" href="javascript:void(0)">我要推荐</a></li>
+							<li><a _href="recharge-list.html" href="javascript:void(0)">项目进展</a></li>
+							<li><a _href="recharge-list.html" href="javascript:void(0)">入伙指南</a></li>
+							<li><a _href="recharge-list.html" href="javascript:void(0)">办证指引</a></li>
+							<li><a _href="recharge-list.html" href="javascript:void(0)">保修保养</a></li>
+							<li><a _href="recharge-list.html" href="javascript:void(0)">个人中心</a></li>
+							<li><a _href="recharge-list.html" href="javascript:void(0)">客户活动</a></li>
+						</ul>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</aside>
+<div class="dislpayArrow"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<section class="Hui-article-box">
+	<div id="Hui-tabNav" class="Hui-tabNav">
+		<div class="Hui-tabNav-wp">
+			<ul id="min_title_list" class="acrossTab cl">
+				<li class="active"><span title="欢迎页" data-href="welcome.html">欢迎页</span><em></em></li>
+			</ul>
+		</div>
+		<div class="Hui-tabNav-more btn-group"><a id="js-tabNav-prev" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d4;</i></a><a id="js-tabNav-next" class="btn radius btn-default size-S" href="javascript:;"><i class="Hui-iconfont">&#xe6d7;</i></a></div>
+	</div>
+	<div id="iframe_box" class="Hui-article">
+		<div class="show_iframe">
+			<div style="display:none" class="loading"></div>
+			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+		</div>
+	</div>
+</section>
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="js/H-ui.js"></script> 
+<script type="text/javascript" src="js/H-ui.admin.js"></script> 
+<script type="text/javascript">
+ 
+	$(function(){
+		//获取用户登录信息并显示
+		if(getCookie('acountName')!=null || getCookie('rolesName')!=null){
+			$('#acountName').html(getCookie('acountName'));
+			$('#showUserName').html(getCookie('rolesName'));
+			$('#login-box').hide();
+		}else{
+//			window.location.href = 'login.html';
+		}
+		
+	});
+	//退出登录
+	$('#quitLogin').click(function(){
+		//删除cookie
+		setCookie('acountId','',-1);
+		setCookie('acountName','',-1);
+		setCookie('rolesName','',-1);
+		window.location.href = "login.html";
+	});
+	//切换账号
+	$('#changeAcount').click(function(){
+		//删除cookie
+		setCookie('acountId','',-1);
+		setCookie('acountName','',-1);
+		setCookie('rolesName','',-1);
+		window.location.href = "login.html";
+	});
+	
+
+</script> 
+
+</body>
+</html>

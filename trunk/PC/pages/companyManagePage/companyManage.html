@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>公司维护</title>
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/index.css"/>
+	</head>
+	<body >
+		<!--content start-->
+		     <div class="container-fluid overflow-hidden">
+		     	<div class="">
+		     		<!--main contain start-->
+		     		<div class="nav nav-tabs">
+						<h4 class="display-inlineblock">公司信息</h4>
+						<div class="row float_r mar-5">
+			     			 <button type="button" id="t_add" class="btn btn-success btn-small "  data-toggle="modal" data-target="#addCompany">新增公司</button>
+			     			 
+			     		</div>
+			     	</div>
+			     	<div class="container-fluid overflow-hidden">
+			     		<!--table -->
+			     		 <div class="row-fluid">
+			     		 	<div class="table-responsive mar_1">
+			     		 		<table id="t_info" class="table table-striped table-bordered table-hover">
+			     		 			<thead>
+			     		 				<tr >
+			     		 					<th>
+			     		 						<input type="checkbox" id="toChooseAll" onchange="toChooseAll(this.id,'tChoose')"/>
+			     		 					</th>
+			     		 					<th >地区</th>
+			     		 					<th >公司名称</th>
+			     		 					<th >最近一次更新用户</th>
+			     		 					<th >最近一次更新时间</th>
+			     		 					<th >操作</th>
+			     		 				</tr>
+			     		 			</thead>
+			     		 			<tbody>
+			     		 				<tr class="center">
+			     		 					<td><input type="checkbox" name="tChoose" /></td>
+			     		 					<td >18826412572</td>
+			     		 					<td >启用</td>
+			     		 					<td >深圳</td>
+			     		 					<td >aaaaa</td>
+			     		 					<td ><a >编辑</a></td>	
+			     		 				</tr>
+			     		 				<tr class="center">
+			     		 					<td><input type="checkbox" name="tChoose" /></td>
+			     		 					<td >18826412572</td>
+			     		 					<td >启用</td>
+			     		 					<td >深圳</td>
+			     		 					<td >admin</td>
+			     		 					<td ><a >编辑</a></td>	
+			     		 				</tr>
+			     		 			</tbody>
+			     		 		</table>
+			     		 	</div>
+			     		 </div><!--/.table-->
+			     		 <!--nextpage-->
+			     		 <div class="row-fluid">
+			     		 	<div class="nextpage mar_r1">
+			     		 		<div class="float_r">
+			     		 			每页显示
+			     		 			<select class="">
+			     		 				<option id="pageindex0">10</option>
+			     		 				<option id="pageindex1">20</option>
+			     		 				<option id="pageindex2">50</option>
+			     		 			</select>条
+			     		 			<a  class=" icon-step-backward" id="firstPage"></a>
+			     		 			<a class="icon-caret-left" id="forwordPage"></a>
+			     		 			共<span id="infoRecord"> 10 </span>条记录&nbsp;
+			     		 			第<span id="page"> 1 </span>页/共<span id="allpage"> 10 </span>页
+			     		 			<a class=" icon-caret-right" id="nextPage"></a>
+			     		 			<a class=" icon-step-forward" id="lastestPage"></a>
+			     		 			&nbsp;&nbsp;
+			     		 			跳转到<input type="text" id="pageNum" style="width:50px;"  />页 <a>GO</a>
+			     		 		</div>
+			     		 	</div> <!--/.nextpage-->
+			     		 </div>
+			     		 <!--modal box-->
+			     		 <div class="modal fade" role="modal" id="addCompany">
+			     		 	<div class="modal-dialog">
+			     		 		<div class="modal-content">
+			     		 			<div class="modal-header">
+			     		 				<h4 class="text-center">新增公司</h4>
+			     		 			</div>
+			     		 			<!--/.modal header-->
+			     		 			<div class="modal-body">
+			     		 				<div class="text-center">
+			     						<div class="row mar-10">
+			     							<div class="col-sm-4 text-right">
+			     								<span class="text-danger" >*</span>公司名称:
+			     							</div>
+			     							<div class="col-sm-7">
+			     								<input type="text" value="" id="addCompanyName" class="input input-self input-wh" placeholder="请输入公司名" data-demand="demandAttr"/>
+			     							</div>
+			     						</div>
+			     						<div class="row mar-10">
+			     							<div class="col-sm-4 text-right">
+			     								<span class="text-danger">*</span>
+			     								所在区域：
+			     							</div>
+			     							<div class="col-sm-7">
+			     								<!--后台获取角色数据-->
+			     								<select id="roleDate" class="L-selector" role="selection" data-demand="demandAttr">
+			     									<option class="active" value="0">--请选择--</option>
+			     									<option class="active" value="1">广州</option>
+			     									<option class="active" value="2">深圳</option>
+			     								</select>
+			     							</div>
+			     						</div>
+			     					</div>
+			     		 				
+			     		 			</div>
+			     		 			<!--/.modal body-->
+			     		 			<div class="modal-footer">
+			     		 				<button type="button" class="btn btn-danger" onclick="addUsers();">保存</button>
+			     						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+			     		 			</div>
+			     		 			<!--/.modal footer-->
+			     		 		</div>
+			     		 	</div>
+			     		 </div>
+			     	</div><!--/.container-->
+		     	</div>
+		     </div>
+		<!--content end-->
+		
+		
+		<script src="../../assets/js/bootstraps/jquery-1.11.3.js"></script>
+		<script src="../../assets/js/bootstraps/bootstrap.min.js" ></script>
+		<script src="../../assets/js/index.js"></script>
+	</body>
+</html>

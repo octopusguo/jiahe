@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>注册</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <div id="content" class="ub-f1 tx-l ">
+                <div class="loginData bg_fff">
+                    <div class="sc-bg-active uinput ub ub-f1  bc-border uba uc-a1" style="margin-bottom: .5rem;">
+                        <input placeholder="请填写手机号" type="text" class="ub-f1" id="user">
+                    </div>
+                    <div class="sc-bg-active uinput ub ub-f1 ub-ac bc-border uba uc-a1" style="margin-bottom: .5rem;">
+                        <input placeholder="请填写验证码" type="text" class="ub-f1" id="auth">
+                        <div class="send bg_3299e4 color_fff uc-a1"><div class="font_24">发送验证码</div></div>
+                    </div>
+                    <div class="sc-bg-active uinput ub ub-f1  bc-border uba uc-a1" style="margin-bottom: .5rem;">
+                        <input placeholder="请设置密码" type="password" class="ub-f1" id="pass">
+                    </div>
+                    <div class="ub ub-ac">
+                        <div class="sc-bg-active uinput ub ub-f1  bc-border uba uc-a1">
+                            <input placeholder="请输入地址" type="text" id="site" class="ub-f1">
+                        </div>
+                    </div>
+                </div>
+                <div class="ub" style="padding: 0 .5rem;margin: 1.5rem 0;">
+                    <div class="btn ub ub-f1 uc-a1 ub-ac bc-text-head ub-pc bg_3299e4"  id="btn" onclick="agree()">同意协议并注册</div>
+                </div>
+                <div class="ub ub-pc color_0e84ce" style="margin-bottom: .5rem;">《使用条款和协议》</div>
+                <div class="ub ub-pc color_34">收不到短信？使用 <div class="color_0e84ce">语音验证码</div></div>
+            </div>
+
+        </div>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+    <script>
+        function agree(){
+            window.location.href="reminder.html"
+        }
+       
+
+    
+    
+    
+ </script>
+</html>

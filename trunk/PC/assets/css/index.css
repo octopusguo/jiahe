@@ -1,0 +1,252 @@
+/*自定义公共样式
+ setTime:2015-12-23
+ author:lmn*/
+
+/*字体*/
+html,body{
+	font-family: "微软雅黑";
+}
+a,a:hover{text-decoration: none;cursor:pointer}
+/*.b_hd{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:50px;
+}*/
+.float_l{
+	float:left;
+}
+.float_r{
+	float:right;
+}
+.overflow-hidden{
+	overflow:hidden;
+}
+.cur-pointer{
+	cursor: pointer;
+}
+.btn-header-mar{
+	margin:15px 0;
+}
+.nav-mar-tb{
+	margin:69px 0;
+}
+.no-border{
+	border:0;
+}
+.display-inlineblock{
+	display: inline-block;
+}
+
+/*颜色部分*/
+.color_fff{
+	color:#fff;
+}
+.bor-right{border-right:3px solid seagreen}
+/*图标*/
+.block{
+	display: block !important;
+}
+/*.input-icon{
+	position:relative;
+}
+.input-icon>input{ }
+.input-icon input-icon-right>input{
+	  padding-left: 6px;
+      padding-right: 24px;
+}*/
+/*按钮圆角*/
+.btn-radius{
+	border-radius:.3rem;
+	-webkit-border-radius:.3rem;
+}
+
+/*输入框*/
+.input-self{
+	border-radius:.3rem;
+	border:1px solid #ddd;
+	height:30px;
+	line-height: 30px;
+}
+
+/*边距*/
+.mar_1{
+	margin:1rem;
+}
+.mar_r1{
+	margin-right:1rem;
+}
+.mar_l1{
+	margin-left:1rem;
+}
+.mar-t1{
+	margin-top:1rem;
+}
+.mar-5{
+	margin:5px;
+}
+.mar-10{
+	margin:10px;
+}
+/*居中*/
+.mar_center{
+	text-align: center;
+}
+
+/*表格*/
+.table {
+	text-align: center;
+}
+.table>thead >tr >th {
+    border-color: #DDD;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-bottom-width: 2px;
+    text-align: center;
+}
+.queryInputbox>div{
+	margin-left:10px;
+	display: inline-block;
+}
+.input-wh{
+	width:85%;
+	/*border:0;*/
+	/*border-bottom:2px solid seagreen;*/
+}
+.L-selector{
+	width:85%;
+	 border: 1px solid #ddd;
+	/*border:0;
+	border-bottom: 2px solid seagreen;*/
+}
+.L-textarea{
+	width: 85%;
+    height:205px;
+    margin: 5px;
+     border: 1px solid #ddd;
+    /*border: 2px solid seagreen;*/
+    resize: none;
+}
+.L-label{
+	margin-left:20px;
+	font-weight: 200;
+}
+
+/*首页背景*/
+.bg-indexPage{
+	background:url(../img/bg_indexpage.png) no-repeat;
+	position: fixed;
+    _position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center auto;
+     background-size: contain;
+    -webkit-background-size: contain;
+}
+/*登录页*/
+.img-bg{
+	position: fixed;
+    _position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    z-index: -10;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    zoom: 1;
+}
+.login-bg{
+	background:url(../img/bg-login.png);
+	position: fixed;
+    _position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 1920px;
+    z-index: -10;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    zoom: 1;
+}
+.login-box{
+	background-color:#fff;
+	box-shadow: 0 0 10px #eee;
+	/*border:2px solid #ddd;*/
+	border-radius:.5rem;
+	-webkit-border-radius:.5rem;-moz-border-radius:.5rem;-ms-border-radius:.5rem;
+	padding:1rem 2rem 1.5rem 2rem;
+	width:450px;
+	height:300px;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left:0; bottom: 0; right: 0;
+}
+.logo-login{
+	background: url(../img/logo-login.png) no-repeat;
+	-webkit-background-size:contain;
+	background-size:contain;
+}
+.input-login{
+	background-color:#fff;
+	border:2px solid #d9d9d9;
+	border-radius:1rem;
+	-webkit-border-radius:1rem;
+	-moz-border-radius:1rem;
+	-ms-border-radius:1rem;
+	height:2.2rem;
+	width:auto;
+	margin:1rem 3.4rem 0 3.4rem; 
+	line-height: 1rem;
+}
+.btn-login{
+	border-radius:1rem;
+	-webkit-border-radius:1rem;
+	-moz-border-radius:1rem;
+	-ms-border-radius:1rem;
+	background-color:#e38e49;
+	color:#fff;
+	height:2.2rem;
+	width:38%;
+	border:0;
+}
+.icon-password-lock{
+	background-image: url(../img/icon-login-password-lock.png) no-repeat;
+	/*-webkit-background-size:contain;
+	background-size:contain;*/
+}
+/*logo*/
+.menu-text-mr{
+	margin-left:4rem;
+}
+.img-logo{
+	position: fixed;
+    _position: absolute;
+    background-size:contain;
+	-webkit-background-size:contain;
+	-o-background-size:contain;
+	width:2rem;
+	height:2rem;
+	/*margin:.5rem .5rem 0 .5rem;*/
+}
+.analysis-logo{
+	background:url(../img/anysis.png) no-repeat;
+	position: fixed;
+    _position: absolute;
+    background-size:contain;
+	-webkit-background-size:contain;
+	-o-background-size:contain;
+	width:2rem;
+	height:2rem;
+	margin:.5rem .5rem 0 .5rem;
+}

@@ -1,0 +1,249 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<link href="../../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+<link href="../../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<link href="../../lib/Hui-iconfont/1.0.1/iconfont.css" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>管理员列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>后台管理系统<span class="c-gray en">&gt;</span> 权限管理 <span class="c-gray en">&gt;</span>账户管理 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20">
+	<div class="clearfix">
+		<div class="col-offset-1 col-11">
+			<div class="col-2 mr-10">
+				<input type="text" class="input-text" placeholder="用户名" id="" name="">
+			</div>
+			<div class="col-2">
+				<input type="text" class="input-text" placeholder="所属角色,所属公司" id="" name="">
+			</div>
+			<div class="col-2 text-c" style="line-height: 30px;">
+				状态：
+				<input type="radio" id="radio-2" name="demo-radio1">
+				<label for="radio-2" class="mr-10">启用</label>
+				<input type="radio" id="radio-2" name="demo-radio1">
+				<label for="radio-2">禁用</label>
+			</div>
+			<div class="col-4">
+				 日期范围：
+				<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:118px;">
+				-
+				<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:118px;">
+			</div>
+			<div class="col-1">
+				<button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+			</div>
+		</div>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-10"> 
+		<span class="l">
+			<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
+			<a href="javascript:;" onclick="layer_show('添加管理员','admin-add.html','1')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加管理员</a>
+		</span> 
+	 <span class="r">共有数据：<strong>54</strong> 条</span>
+	 <div class="r mr-10">
+	  	显示
+	  	<select id="showNum">
+	  		<option>10</option>
+	  		<option>25</option>
+	  		<option>50</option>
+	  		<option>100</option>
+	  	</select>
+	  	条
+	 </div>
+	</div>
+	<table class="table table-border table-bordered table-bg table-sort">
+		<thead>
+			<tr>
+				<th scope="col" colspan="9">员工列表</th>
+			</tr>
+			<tr class="text-c">
+				<th width="25"><input type="checkbox" name="" value=""></th>
+				<th width="40">ID</th>
+				<th width="150">账号名称</th>
+				<th width="100">所属地区</th>
+				<th width="100">角色名称</th>
+				<th width="90">状态</th>
+				<th width="150">创建人</th>
+				<th width="130">创建日期</th>
+				<th width="100">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	
+	<div class="" style="margin-top:40px;text-align: center;" id="page">
+			共<span id="total">22</span>条数据&nbsp;<span id="pageNav" class="umar_l15"></span>
+	</div>
+</div>
+<script type="text/javascript" src="../../lib/jquery/1.9.1/jquery.min.js"></script>  
+<script type="text/javascript" src="../../lib/layer/1.9.3/layer.js"></script> 
+<script type="text/javascript" src="../../lib/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="../../lib/My97DatePicker/WdatePicker.js"></script> 
+<script type="text/javascript" src="../../js/H-ui.js"></script> 
+<script type="text/javascript" src="../../js/H-ui.admin.js"></script> 
+<script src="../../js/page.js" type="text/javascript"></script>
+<script type="text/javascript">
+	/*分页*/
+	window.cPage=0;
+	var pData=10,tData,tPage;//当前页码，每页显示条目数，总条数
+	var url_getList=URLHEAD+"acountType";//获取账户地址头部定义
+	$(function(){
+		
+	  	/*ajax请求账户总数目*/
+		$.ajax({
+			type:"post",
+			url:url_getList+"?type=5",
+			async:true,
+			data:{
+				acountLogin:'',
+				acountRoleId:'',
+				acountStatus:'',
+				acountStartTime:PROJECT_STARTTIME,
+				acountEndTime:PROJECT_ENDTIME,
+				acountCompanyId:''
+			},
+			success:function(data){
+				var total = data.data[0].total;
+				$('#total').text(total);
+				var total = total;//总条数
+				var showNum = $('#showNum').val();//每页显示条目数
+				var pageCount = Math.ceil(total/showNum);
+				
+				pageNav.go(1,pageCount);
+			}
+		});
+	  	//分页处理
+		pageNav.go = function(p, pn) {
+			//p为当前页，pn为总页数
+		  	document.getElementById("pageNav").innerHTML = this.nav(p, pn);
+		  	if (this.fn != null) {
+		    	this.fn(this.p, this.pn);
+		  	};
+		  	getAdminList(p);
+		};
+		
+	});
+	
+	function getAdminList(page){
+		$.ajax({
+			type:"post",
+			url:url_getList+"?type=2",
+			async:true,
+			dataType:'json',
+			data:{
+				page:page,
+				pageNum:$('#showNum').val(),
+				acountLogin:"",
+				acountRoleId:"",
+				acountStatus:"",
+				acountStartTime:PROJECT_STARTTIME,
+				acountEndTime:PROJECT_ENDTIME,
+				acountCompanyId:""
+			},
+			success:function(data){
+				insertIntoTable(data.data);
+				console.log(JSON.stringify(data));
+				
+			},
+			error:function(err){
+				alert(JSON.stringify(err));
+			}
+		});
+
+	}
+	
+	function insertIntoTable(DATALIST){
+		var iHtml="";
+		for(var i=0;i<DATALIST.length;i++){
+			if(DATALIST[i].acountStatus == 0){
+				DATALIST[i].acountStatus = '已启用';//<td class="td-status"><span class="label label-success radius">已启用</span></td>
+			}else{
+				DATALIST[i].acountStatus = '已停用';//<td class="td-status"><span class="label radius">已停用</span>
+			}
+			iHtml+='<tr class="text-c">'
+			+'<td><input type="checkbox" value="" name=""></td>'
+			+'<td>'+DATALIST[i].acountId+'</td>'//ID
+			+'<td>'+DATALIST[i].acountName+'</td>'//账号名称
+			+'<td>'+DATALIST[i].rolesName+'</td>'//所属地区
+			+'<td>'+DATALIST[i].companyName+'</td>'//所属公司
+			+'<td>'+DATALIST[i].acountStatus+'</td>'//状态
+			+'<td>'+DATALIST[i].createName+'</td>'//创建人
+			+'<td>'+DATALIST[i].createTime+'</td>'//创建日期
+			+'<td class="td-manage"><a style="text-decoration:none" onClick="admin_start(this,\'10001\')" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe615;</i></a> <a title="编辑" href="javascript:;" onclick="layer_show(\'管理员编辑\',\'admin-add.html\',\'2\')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_del(this,\'1\')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>';
+			//操作
+		}
+	    $("table>tbody").prepend(iHtml);
+	    var len = $('table>tbody').find('td').length;
+	    
+	}
+
+
+
+
+
+
+/*
+	参数解释：
+	title	标题
+	url		请求的url
+	id		需要操作的数据id
+	w		弹出层宽度（缺省调默认值）
+	h		弹出层高度（缺省调默认值）
+*/
+/*管理员-删除*/
+function admin_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		
+		$(obj).parents("tr").remove();
+		layer.msg('已删除!',{icon:1,time:1000});
+	});
+}
+/*管理员-停用*/
+function admin_stop(obj,id){
+	layer.confirm('确认要停用吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		
+		$(obj).parents("tr").find(".td-manage").prepend('<a onClick="admin_start(this,id)" href="javascript:;" title="启用" style="text-decoration:none"><i class="Hui-iconfont">&#xe615;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-default radius">已禁用</span>');
+		$(obj).remove();
+		layer.msg('已停用!',{icon: 5,time:1000});
+	});
+}
+
+/*管理员-启用*/
+function admin_start(obj,id){
+	layer.confirm('确认要启用吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		
+		
+		$(obj).parents("tr").find(".td-manage").prepend('<a onClick="admin_stop(this,id)" href="javascript:;" title="停用" style="text-decoration:none"><i class="Hui-iconfont">&#xe631;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+		$(obj).remove();
+		layer.msg('已启用!', {icon: 6,time:1000});
+	});
+}
+
+
+</script>
+</body>
+</html>

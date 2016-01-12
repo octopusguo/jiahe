@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>正益移动华南区项目管理平台</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet"  />
+		<link href="css/ui-box.css" rel="stylesheet" />
+		<link href="css/common.css" rel="stylesheet" />
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/page.js"></script>
+		<style>
+			#userEmail input{margin-left:10px}
+		</style>
+	</head>
+	<body class="">
+		<!--
+	    	添加用户
+	    -->
+	    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" 
+	   aria-labelledby="myModalLabel" aria-hidden="ture">
+	   <div class="modal-dialog">
+	      <div class="modal-content">
+	         <div class="modal-header">
+	            <button type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="modal-title">
+	               用户编辑
+	            </h4>
+	         </div>
+	         <div class="modal-body">
+		   		 <div class="input-group umar_t10">
+		         <span class="input-group-addon">工号:</span>
+		         <input id="userNo" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		 <div class="input-group umar_t10">
+		         <span class="input-group-addon">姓名:</span>
+		         <input id="userName" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		 <div class="input-group umar_t10">
+		         <span class="input-group-addon">字母:</span>
+		         <input id="nameFlag" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		  <div class="input-group umar_t10">
+		         <span class="input-group-addon">岗位:</span>
+		         <input id="userPost" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		  <div class="input-group umar_t10">
+		         <span class="input-group-addon">部门团队:</span>
+		         <div class="form-control" id="depart">
+		         </div>
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		  <div class="input-group umar_t10">
+		         <span class="input-group-addon">手机号:</span>
+		         <input id="telPhone" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		  <div class="input-group umar_t10">
+		         <span class="input-group-addon">QQ:</span>
+		         <input id="userQQ" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		 <div class="input-group umar_t10">
+		         <span class="input-group-addon">微信:</span>
+		         <input id="userWx" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		 <div class="input-group umar_t10">
+		         <span class="input-group-addon">邮箱:</span>
+		         <input id="userEmail" type="text" class="form-control" placeholder="">
+		   		 <span class="input-group-addon c_red">*</span>
+		   		 </div>
+		   		<div class="input-group umar_t10">
+		         <span class="input-group-addon">所属分区:</span>
+		         <div id="userEmail" type="text" class="form-control ub ub-ac">
+		         	<input type="radio" onclick="choose(0)" id="0" name="address" />广州<input type="radio" id="1" onclick="choose(1)" name="address" />深圳<input type="radio" id="2" onclick="choose(2)" name="address" />北京<input type="radio" id="3" onclick="choose(3)" name="address" />上海<input type="radio" id="4" onclick="choose(4)" name="address" />武汉
+		         </div>
+		   		 </div>
+	         </div>
+	         <div class="modal-footer">
+	            <button type="button" class="btn" 
+	               data-dismiss="modal">关闭
+	            </button>
+	            <button onclick="savaUser(1)" type="button" class="btn" style="color:#fff;background-color:#35cd98 !important">
+	               确定
+	            </button>
+	         </div>
+	      </div>
+	      </div>
+	      </div>
+	    <!--
+	    	删除提示框
+	    -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+	   aria-labelledby="myModalLabel" aria-hidden="true">
+	   <div class="modal-dialog">
+	      <div class="modal-content">
+	         <div class="modal-header">
+	            <button type="button" class="close" 
+	               data-dismiss="modal" aria-hidden="true">
+	                  &times;
+	            </button>
+	            <h4 class="modal-title" id="">
+	               删除提示框
+	            </h4>
+	         </div>
+	         <div class="modal-body">
+	            确认删除吗?
+	         </div>
+	         <div class="modal-footer">
+	            <button type="button" class="btn" 
+	               data-dismiss="modal">关闭
+	            </button>
+	            <button onclick="delUser()" type="button" class="btn" style="color:#fff;background-color:#35cd98 !important">
+	               确定
+	            </button>
+	         </div>
+	      </div>
+	      </div>
+	      </div>
+	      <div id="dialog" class="uhide">
+			<img src="img/loading.gif" style="vertical-align: middle;margin-right:10px" /><span id="tip"></span>
+		</div>
+		<div class="title">
+			<div class="font18 fl" style="padding-top:15px"><span class="icon-user-md" style="margin-right:10px;"></span>员工列表</div>
+			<div class="fr" style="padding-top:10px"> 
+				<button type="button" class="btn btn-info" onclick="addUser()" style="width:80px">添加</button>
+			</div>
+			<!--
+			<div class="fr" style="padding-top:10px;margin-right:15px" onclick="dialogOpen('add','addModal')">
+				<div class="btnDiv">添加用户</div>
+			</div>
+			-->
+			<div class="clear"></div>
+		</div>
+		<div class="umar_lr10 umar_t10" id="data">
+			<table>
+				<thead class="tablethead">
+					<tr><td width="50">编号</td><td width="100">工号</td><td width="140">姓名</td><td>岗位</td><td width="120">电话</td><td width="120">QQ</td><td width="140">微信</td><td width="160">邮箱</td><td width="200">操作</td></tr>
+				</thead>
+				<tbody id="userList">
+				</tbody>
+			</table>
+		</div>
+		<div class="" id="page">
+			一共<span id="total"></span>条数据<span id="pageNav" class="umar_l15"></span>
+		</div>
+	</body>
+	<script>
+		var html='';
+		var page=1;pagePre=10;
+		window.onload = function(){
+			count();
+			teamList();
+		}
+		function teamList(){
+		var url = appcanUrl+"teamName";
+		jQuery.getJSON(url,function(data){
+				if(data.status == 0){
+					var html='<option value="0">通讯录</option>';
+					var result = data.data;
+					for(var i=0;i<result.length;i++){
+						html+='<option value="'+result[i].teamId+'">'+result[i].teamName+'</option>'
+					}
+					var newD = document.createElement("select");
+					newD.id = "team";
+					newD.innerHTML = html;
+					$$("depart").appendChild(newD);
+				}
+		   	})
+	}
+		function count(){
+			var url = appcanUrl+"totalUser";	
+			console.log(url)
+			$$("dialog").className = "";
+			$$("tip").innerHTML = "加载中...";
+			jQuery.getJSON(url,function(data){
+				if(data.status == 0){
+					$$("total").innerHTML = data.data[0].totalUser;
+					var pageNum = Math.ceil(data.data[0].totalUser/pagePre);
+					pageNav.go(page,pageNum);
+				}
+		   	});
+		}
+		function userList(page){
+			var url = appcanUrl+"userList?page="+page+"&pageNum="+pagePre;
+			console.log(url);
+			jQuery.getJSON(url,function(data){
+				$$("dialog").className = "uhide";
+				if(data.status == 0){
+					var html='';
+					var result = data.data;
+					if(result.length==0){
+						$$("userList").innerHTML = "<tr><td colspan='9' style='padding:30px;font-size:14px;background-color:#eee'>暂无数据...</td></tr>";
+						return;
+					}
+					for(var i=0;i<result.length;i++){
+						html+='<tr id="u'+result[i].userId+'">'
+							+'<td>'+((page-1)*pagePre+i+1)+'</td><td>'+result[i].userNo+'</td><td>'+result[i].userName+'</td><td>'+result[i].userPost+'</td><td>'+result[i].telPhone+'</td><td>'+result[i].userQQ+'</td><td>'+result[i].userWx+'</td><td>'+result[i].userEmail+'</td><td><button type="button" class="btn btn-info" onclick="changeUser(\''+result[i].userId+'\',\''+result[i].userNo+'\',\''+result[i].userName+'\',\''+result[i].userPost+'\',\''+result[i].telPhone+'\',\''+result[i].userQQ+'\',\''+result[i].userWx+'\',\''+result[i].userEmail+'\',\''+result[i].nameFlag+'\',\''+result[i].depart+'\','+result[i].addressFlag+')">编辑</button><button type="button" class="btn btn-danger" onclick="delDialog('+result[i].userId+')" style="margin-left:10px">删除</button></td>'
+							+'</tr>'
+					}
+					document.getElementById("userList").innerHTML = html;
+				}
+		   	})
+		}
+		//分页处理
+		pageNav.go = function(p, pn) {
+			$$("tip").innerHTML = "数据加载中,请稍后...";
+			$$("dialog").className = "";
+		  //$("#pageNav").html(this.nav(p,pn)); //如果使用jQuery可用此句
+		  document.getElementById("pageNav").innerHTML = this.nav(p, pn);
+		  if (this.fn != null) {
+		    this.fn(this.p, this.pn);
+		  };
+		  userList(p);
+		};
+		//打开弹出框
+		function dialogOpen(id){
+			$('#'+id).modal('show');
+		}
+		//关闭弹出框
+		function dialogClose(id){
+			$('#'+id).modal('hide');
+		}
+		//添加用户
+		var userFlag,userId,addressFlag="0";
+		function choose(type){
+			addressFlag = type;
+		}
+		function addUser(){
+			$$("modal-title").innerHTML = "员工添加";
+			$$("userNo").value = "";
+			$$("userName").value = "";
+			$$("nameFlag").value = "";
+			//$$("depart").value = "";
+			$$("team").options[0].selected = true;
+			$$("userPost").value = "";
+			$$("telPhone").value = "";
+			$$("userQQ").value = "";
+			$$("userWx").value = "";
+			$$("userEmail").value = "";
+			dialogOpen("addModal");
+			userFlag = 1;
+		}
+		//编辑用户
+		function changeUser(id,a,b,c,d,e,f,g,h,i,flag){
+			addressFlag = flag;
+			$$(flag).checked  = true;
+			$$("modal-title").innerHTML = "编辑员工";
+			$$("userNo").value = a;
+			$$("userName").value = b;
+			$$("userPost").value = c;
+			$$("telPhone").value = d;
+			$$("userQQ").value = e;
+			$$("userWx").value = f;
+			$$("userEmail").value = g;
+			$$("nameFlag").value = h;
+		    $$("team").options[i].selected = true;
+			dialogOpen("addModal");
+			userFlag = 0;
+			userId = id;
+		}
+		//保存用户
+		function savaUser(){
+			var userNo = $$("userNo").value;
+			var userName = $$("userName").value;
+			var nameFlag = $$("nameFlag").value;
+			var depart = $$("team").options[$$("team").selectedIndex].value;
+			if(depart==0){
+				contactType = 0;
+			}else{
+				contactType = 1;
+			}
+			var userPost = $$("userPost").value;
+			var telPhone = $$("telPhone").value;
+			var userQQ = $$("userQQ").value;
+			var userWx = $$("userWx").value;
+			var userEmail = $$("userEmail").value;
+			if(userName==""){
+				alert("请输入姓名");
+				return;
+			}else if(userPost==""){
+				alert("请输入岗位");
+				return;
+			}
+			$$("dialog").className = "";
+			if(userFlag==1){
+				$$("tip").innerHTML = "添加员工中...";
+				var url = appcanUrl+"addUser";
+			}else{
+				$$("tip").innerHTML = "编辑中...";
+				var url = appcanUrl+"updateUser?userId="+userId;
+			}
+		   	$.ajax({
+               url : url,
+               type : "POST",
+               data:{"userNo":userNo,"userName":userName,"nameFlag":nameFlag,"userPost":userPost,"telPhone":telPhone,"userQQ":userQQ,"userWx":userWx,"userEmail":userEmail,"addressFlag":addressFlag,"depart":depart,"contactType":contactType,},              
+               success : function(result) {
+               	$$("dialog").className = "uhide";
+               	dialogClose("addModal");
+               		if(result.status==0){
+               			alert("操作成功");
+               			count();
+               		}else{
+               			alert("操作失败");
+               		}
+               },
+               error : function() {
+               	$$("dialog").className = "uhide";
+               	alert("操作失败");
+               }
+           })
+		}
+		//弹出删除提示
+		var delId;
+		function delDialog(id){
+			dialogOpen("myModal");
+			delId = id;
+		}
+		//删除用户
+		function delUser(){
+			dialogClose("myModal");
+			$$("dialog").className = "";
+			$$("tip").innerHTML = "删除员工中...";
+			var url = appcanUrl+"delUser?userId="+delId;
+			console.log(url);
+			jQuery.getJSON(url,function(data){
+				$$("dialog").className = "uhide";
+				if(data.status == 0){
+					alert("删除成功");
+					$$("total").innerHTML = parseInt($$("total").innerHTML)-1;
+					$$("u"+delId).parentNode.removeChild($$("u"+delId));
+				}
+		   	});
+		}
+	</script>
+</html>

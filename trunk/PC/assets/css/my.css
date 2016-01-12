@@ -1,0 +1,79 @@
+/*
+ * add by wenxiu
+ * at 2015-12-29
+ */
+
+/*common*/
+.border-top-main{border-top: 5px solid #C5D0DC;}
+.border-top{border-top: 1px solid #C5D0DC;}
+.border-bottom{border-bottom: 1px solid #C5D0DC;}
+.mt-10{margin-top: 10px;}
+.mt-15{margin-top: 15px;}
+.mt-5{margin-top: 5px;}
+.padding-5{padding: 5px}
+.padding-10{padding: 10px;}
+.text-right{text-align: right;}
+.btn-sm{
+	padding: 5px 10px;
+	font-size: 12px;
+	line-height: 1.5;
+	min-height:0px;
+}
+textarea.form-control {
+	min-height: 120px;
+}
+.bold{
+	font-size: 16px;
+	font-weight: bold;
+}
+.clearfix{
+	overflow: hidden;
+	zoom: 1;
+}
+.base-info{
+	position: relative;
+	top: -10px;
+	background-color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+}
+.pre-img-wh2{
+	width: 72px;
+	height: 40px;
+}
+.pre-img-wh{
+	width: 144px;
+	height: 80px;
+}
+.trans-upload{
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+.upload-img{
+	position: absolute;
+	top: 0px;
+}
+.red-start{
+	color: red;
+}
+.line-style{
+	color: #C5D0DC;
+	width: 90%;
+	margin-left: 50px;
+}
+/*evaluationDetails页面*/
+.eva-star{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/iconfont-star.png) no-repeat;
+	background-size: 32px 32px;
+}
+/*projectPublish页面*/
+.more{
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background: url(../img/iconfont-add.png) no-repeat;
+	background-size: 32px 32px;
+}

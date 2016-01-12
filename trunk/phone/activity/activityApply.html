@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>活动报名</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="../css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver ub-f1  bg_fed200" tabindex="0">
+            <div id="content" class="tx-l pa-b1 bg_fed200">
+                <div class="activitys">
+                    <img src="../images/apply.png"/>
+                </div>
+                <div class="apply">
+                    <div class=" uinput ub ub-f1  bc-border uba bg_fff pa-l-05 uc-a1">
+                        <input placeholder="姓名" type="text" class="ub-f1" id="name">
+                    </div>
+                    <div class=" uinput ub ub-f1  bc-border uba bg_fff pa-l-05 uc-a1">
+                        <input placeholder="手机号" type="number" class="ub-f1" id="telephone">
+                    </div>
+                    <div class=" uinput ub ub-f1  bc-border uba bg_fff pa-l-05 uc-a1">
+                        <input placeholder="报名人数" type="number" class="ub-f1" id="applyNum">
+                    </div>
+                    <div class="ub ub-pe font_26">
+                        <div class="">已经报名人数</div>
+                        <div class="color_d63535">21</div>
+                        <div class="">/30人</div>
+                    </div>
+                </div>
+                <div class="btn ub ub-ac bc-text-head ub-pc bc-btn clickApply"  id="btn" onclick="apply()">点击报名</div>
+
+            </div>
+            <!--content结束-->
+        </div>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script src="../js/index.js"></script>
+    </body>
+    <script>
+        function activityList(){
+            window.location.href="activityDetails.html";
+        }
+        function apply(){
+            var name=$("#name").val();
+            var telephone=$("#telephone").val();
+            var applyNum=$("#applyNum").val();
+            if (name == ""){
+                alert("姓名不能为空！")
+            }else if(telephone == ""){
+                alert("手机号码不能为空！")
+            }else if (applyNum == ""){
+                alert("报名人数不能为空！")
+            }else{
+                
+            }
+        }
+    
+            
+ </script>
+</html>

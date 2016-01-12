@@ -1,0 +1,23 @@
+/*ul,li{list-style:none;}*/
+/*a{text-decoration: none;color:#09f;}*/
+/*大容器*/
+/*.starsBox{position:relative;width:120px;float:left;}*/
+.star{height:20px;width: 120px;position:relative;background:url(../images/star.png) repeat-x;cursor:pointer;}
+/*.star的width用于控制显示多少星,120=24*5*/
+.star li{float:left;padding:0;margin:0;}
+.star li a{display: block;width:24px;height:20px;overflow: hidden;text-indent:-9999px;position:absolute;z-index: 5}
+/*.star li a:hover{background:url(../images/star.png) 0 -25px repeat-x;z-index: 3;left: 0}*/
+/*关键实现滑动出现星星，且前一个星星不会消失已选状态*/
+.star a.one-star{left:0;}
+.star a.one-star:hover{width:24px;}
+.star a.two-star{left:24px;}
+.star a.two-star:hover{width:48px;}
+.star a.three-star{left:48px;}
+.star a.three-star:hover{width:72px;}
+.star a.four-star{left:72px;}
+.star a.four-star:hover{width:96px;}
+.star a.five-star{left:96px;}
+.star a.five-star:hover{width:120px;}
+.current-rating{background:url(../images/star.png) 0 -25px repeat-x;position:absolute;height:20px;z-index:1;top:0;left:0}
+
+.discription{clear:both;padding:10px 0px;}

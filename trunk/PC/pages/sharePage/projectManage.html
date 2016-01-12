@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我要推荐</title>
+		<link rel="stylesheet" href="../../assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../assets/css/index.css"/>
+	</head>
+	<body >
+		<!--content start-->
+		     <div class="">
+		     	<div class="">
+     				<div class="nav nav-tabs">
+						<h4>我要推荐</h4>
+			     	</div>
+			        <div class=" mar_1 form-horizontal">
+			        	<div class="form-group">
+			        		<ul class="nav nav-tabs">
+							   <li class="active"><a href="#">全部</a></li>
+							   <li><a href="#">已发布</a></li>
+							   <li><a href="#">待发布</a></li>
+							</ul>
+			        	</div>
+			     		<div class="form-group">
+			     			<button class="col-sm-offset-10 col-sm-2 btn btn-success">新增</button>
+			     		</div>
+			     	</div>
+		     		
+		     		
+		     	</div>
+		     	
+		     	
+		     	<div class="overflow-hidden">
+			     	<div>
+			     		  <div class="row form-group">
+			     		 	<div class="mar_1">
+			     		 		<table id="t_info" class="table table-striped table-bordered table-hover" >
+			     		 			<thead class="table-header">
+			     		 				<tr>
+			     		 					<th >项目名称</th>
+			     		 					<th >所属公司</th>
+			     		 					<th >更新时间</th>
+			     		 					<th>更新人</th>
+			     		 					<th >操作</th>
+			     		 				</tr>
+			     		 			</thead>
+			     		 			<tbody>
+			     		 				<tr class="center">
+			     		 					<td >梅花山</td>
+			     		 					<td >广州</td>
+			     		 					<td >2015-12-31&nbsp;&nbsp;13:12</td>
+			     		 					<td>admin</td>
+			     		 					<td ><a class="mar_r1">查看</a><a class="mar_r1">编辑</a><a>删除</a></td>	
+			     		 				</tr>
+			     		 				<tr class="center">
+			     		 					<td >梅花山</td>
+			     		 					<td >广州</td>
+			     		 					<td >2015-12-31&nbsp;&nbsp;13:12</td>
+			     		 					<td>admin</td>
+			     		 					<td ><a class="mar_r1">查看</a><a class="mar_r1">编辑</a><a>删除</a></td>	
+			     		 				</tr>
+			     		 				<tr class="center">
+			     		 					<td >梅花山</td>
+			     		 					<td >广州</td>
+			     		 					<td >2015-12-31&nbsp;&nbsp;13:12</td>
+			     		 					<td>admin</td>
+			     		 					<td ><a class="mar_r1">查看</a><a class="mar_r1">编辑</a><a>删除</a></td>	
+			     		 				</tr>
+			     		 			</tbody>
+			     		 		</table>
+			     		 		
+			     		 	</div> <!--/.table-->
+			     		 	<div class="nextpage mar_r1">
+			     		 		<div class="float_r">
+			     		 			每页显示
+			     		 			<select class="">
+			     		 				<option id="pageindex0">10</option>
+			     		 				<option id="pageindex1">20</option>
+			     		 				<option id="pageindex2">50</option>
+			     		 			</select>条
+			     		 			<a  class=" icon-step-backward" id="firstPage"></a>
+			     		 			<a class="icon-caret-left" id="forwordPage"></a>
+			     		 			共<span id="infoRecord"> 10 </span>条记录&nbsp;
+			     		 			第<span id="page"> 1 </span>页/共<span id="allpage"> 10 </span>页
+			     		 			<a class=" icon-caret-right" id="nextPage"></a>
+			     		 			<a class=" icon-step-forward" id="lastestPage"></a>
+			     		 			&nbsp;&nbsp;
+			     		 			跳转到<input type="text" id="pageNum" style="width:50px;"  />页 <a>GO</a>
+			     		 		</div>
+			     		 	</div> <!--/.nextpage-->
+			     		 </div>
+			     		 <button class="col-sm-offset-3 col-sm-2 btn btn-success">添加</button>
+			     		 <button class="col-sm-offset-1 col-sm-2 btn btn-success">返回</button>
+			     	</div><!--/.container-->
+		     	</div>
+		     </div>
+		<!--content end-->
+		<script src="../../assets/js/bootstraps/jquery-1.11.3.js"></script>
+		<script src="../../assets/js/bootstraps/bootstrap.min.js" ></script>
+		<script src="../../assets/js/index.js"></script>
+	</body>
+</html>

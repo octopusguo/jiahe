@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="um landscape min-width-240px min-width-320px min-width-480px min-width-768px min-width-1024px">
+    <head>
+        <title>佳兆业</title>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/ui-box.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    </head>
+    <body class="um-vp" ontouchstart>
+        <div id="page_0" class="up ub ub-ver bc-bg" tabindex="0">
+            <!--header开始-->
+            <div id="header" class="uh bc-text-head ub bc-head">
+                <div class="nav-btn" id="nav-left"></div>
+                <h1 class="ut ub-f1 ulev-3 ut-s tx-c" tabindex="0">选择城市</h1>
+                <div class="nav-btn" id="nav-right" onclick="seek()"><img src="images/inquire.png" style="width: 1.3rem" /></div>
+            </div>
+            <!--header结束--><!--content开始-->
+            <div id="content" class="ub-f1 tx-l">
+                <div class="query1 bg_fff">
+                    <div class="ub">
+                        <div class="sc-bg-active uinput ub ub-f1  bc-border uba pa-l1 font_26 uc-a1">
+                            <input placeholder="请输入关键字" type="text" class="ub-f1">
+                        </div>
+                        <div class="btn ub ub-ac bc-text-head ub-pc seek bg_3299e4 uc-a1"  id="btn">搜索</div>
+                    </div>
+                </div>
+                <div class="ub ub-pj location bg_fff ub-ac">
+                    <div class="font_24 color_34">
+                        当前定位城市
+                    </div>
+                    <div class="font_20 color_97">
+                        定位不准确，请在城市列表中选择
+                    </div>
+                </div>
+                <div class="city bg_fff ub ub-ac ub-pj color_0e84ce">
+                    <div class="">
+                        深圳
+                    </div>
+                    <div class="">
+                        <img src="images/next.png" style="width: .5625rem;height: .9rem"/>
+                    </div>
+                </div>
+                <div class="font_24 bg_fff hitCity ub ub-ac color_5f">
+                    热门城市
+                </div>
+                <div class="bg_fff citys">
+                    <div class="ub cityList ">
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            上海
+                        </div>  
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            哈尔滨
+                        </div>
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            南京
+                        </div>
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            广州
+                        </div>
+                    </div>
+                    <div class="ub cityList">
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            厦门
+                        </div>
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            杭州
+                        </div>
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            天津
+                        </div>
+                        <div class="ub ub-con ub-f1 ub-pc ub-ac" onclick="city(this)">
+                            青岛
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--content结束-->
+
+        </div>
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+    <script>
+        function seek(){
+            $(".query1").toggle();
+       }
+       function city(msg){
+           var _this=$(msg);
+           var html=_this.html();
+           alert(html)
+       }
+
+    
+ </script>
+</html>
